@@ -1,14 +1,14 @@
-import { useState } from 'react'
-
 import './App.css'
-
+import Home from "./pages/Home"
 function App() {
 
 
+
+
   return (
-    <>
-      <h1>Panel principal</h1>
-    </>
+    <Routes>
+      <Route path="/" element={ <Home /> } />
+    </Routes>
   )
 }
 

@@ -1,0 +1,18 @@
+{
+    "entries": [
+        {
+            "id": 1,
+            "title": "First Entry",
+            "content": "This is the content of the first entry.",
+            "date": "2023-10-01",
+            "goodThings": [
+                "Woke up early",
+                "Had a good breakfast"
+            ],
+            "badThings": [
+                "Missed the bus",
+                "Had a headache"
+            ]
+        }
+    ]
+}

@@ -6,3 +6,14 @@
   color-scheme: light dark;
 
 }
+
+.entrylist {
+  display: flex;
+}
+
+.entrylist-container {
+  background-color: aqua;
+  border-radius: 30px;
+  margin: 50px;
+  padding: 50px;
+}

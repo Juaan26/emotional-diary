@@ -1,12 +1,16 @@
 import { EntryList } from "../components/EntryList";
 
-import { entries } from "../assets/entries.json"
 
-console.log(entries)
-export default function Home() {
+
+
+export default function Home({ entries }) {
 
     return (
-        <EntryList entries={ entries } />
+        <>
+            <h1 className="home-title">Aquí están todas tus ideas</h1>
+            <EntryList entries={ entries } />
+
+        </>
     )
 
 

@@ -27,6 +27,62 @@
                 "Missed the bus",
                 "Had a headache"
             ]
+        },
+        {
+            "id": 3,
+            "title": "Second Entry",
+            "content": "This is the content of the second entry.",
+            "date": "2023-10-01",
+            "goodThings": [
+                "Woke up early",
+                "Had a good breakfast"
+            ],
+            "badThings": [
+                "Missed the bus",
+                "Had a headache"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Second Entry",
+            "content": "This is the content of the second entry.",
+            "date": "2023-10-01",
+            "goodThings": [
+                "Woke up early",
+                "Had a good breakfast"
+            ],
+            "badThings": [
+                "Missed the bus",
+                "Had a headache"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Second Entry",
+            "content": "This is the content of the second entry.",
+            "date": "2023-10-01",
+            "goodThings": [
+                "Woke up early",
+                "Had a good breakfast"
+            ],
+            "badThings": [
+                "Missed the bus",
+                "Had a headache"
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Second Entry",
+            "content": "This is the content of the second entry.",
+            "date": "2023-10-01",
+            "goodThings": [
+                "Woke up early",
+                "Had a good breakfast"
+            ],
+            "badThings": [
+                "Missed the bus",
+                "Had a headache"
+            ]
         }
     ]
 }

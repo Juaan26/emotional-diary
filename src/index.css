@@ -49,3 +49,69 @@
 }
 
 /*---------------------*/
+
+/* EntryPage page */
+.entry-page-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  row-gap: 3rem;
+  column-gap: 1rem;
+  padding: 2rem;
+  height: 90vh;
+  box-sizing: border-box;
+}
+
+/* Columna izquierda: el form principal */
+.entry-page {
+  display: grid;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-template-rows: auto auto 1fr;
+  gap: 1rem;
+  background-color: #fdd1aa;
+  border-radius: 10px;
+  padding: 1rem;
+  height: 100%;
+}
+
+/* Inputs superiores */
+.entry-page input[type="text"],
+.entry-page input[disabled] {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Input de contenido principal */
+.entry-page-content {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  height: 95%;
+}
+
+/* Columna derecha: cajas */
+.entry-page-good,
+.entry-page-bad {
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.entry-page-good {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  height: 100%;
+}
+
+.entry-page-bad {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  height: 100%;
+}
+
+/*---------------------*/

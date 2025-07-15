@@ -1,4 +1,4 @@
-import { EntryList } from "../components/EntryList";
+import { EntryList } from "../components/EntryList"
 
 
 

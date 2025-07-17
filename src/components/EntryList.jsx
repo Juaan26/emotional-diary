@@ -11,7 +11,7 @@ export function EntryList({ entries }) {
                     onClick={ () => navigate(`/entry/${entry.id}`) }>
                     <h3 className="entrylist-title">{ entry.title }</h3>
                     <hr className="entrylist-hr" />
-                    <p>{ entry.content.slice(0, 100) }...</p>
+                    <p className='entrylist-content'>{ entry.content.slice(0, 300) }...</p>
                     <p className="entrylist-date">{ entry.date }</p>
                 </div>
             )) }

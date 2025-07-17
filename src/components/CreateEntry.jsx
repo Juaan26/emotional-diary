@@ -15,9 +15,9 @@ export function CreateEntry({ entrieList }) {
 
     return (
         <div>
-            <button onClick={ createNewEntry }>Crear entrada vacía</button>
-            <h3>Entradas:</h3>
-            <pre>{ JSON.stringify(entries, null, 2) }</pre>
+            <button className='create-entry-btn' onClick={ createNewEntry }>+</button>
+            {/* <h3>Entradas:</h3>
+            <pre>{ JSON.stringify(entries, null, 2) }</pre> */}
         </div>
     );
 };

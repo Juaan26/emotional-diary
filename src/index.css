@@ -1,5 +1,5 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Dancing Script', cursive;
   line-height: 1.5;
   font-weight: 400;
 
@@ -105,47 +105,166 @@
   grid-row-end: 3;
   grid-template-rows: auto auto 1fr;
   gap: 1rem;
-  background-color: #fdd1aa;
+  background-color: #d6c3a3;
+  /* tono cartón claro */
   border-radius: 10px;
   padding: 1rem;
   height: 100%;
+
+  /* efecto visual */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+  background-image:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.25) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(255, 255, 255, 0.25) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.25) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(255, 255, 255, 0.25) 25%, #d6c3a3 25%);
+  background-size: 20px 20px;
+}
+
+
+
+.entrypage-underline {
+  border-bottom: 1px solid black;
+  font-weight: bold;
+  color: black;
+  margin-right: 8vw;
+}
+
+.entrypage-underline2 {
+  border-bottom: 1px solid black;
+  font-weight: bold;
+  color: black;
+  margin-right: 8vw;
 }
 
 /* Inputs superiores */
 .entry-page input[type="text"],
 .entry-page input[disabled] {
   padding: 0.5rem;
+  background-color: #fdd1aa;
+  border: none;
+  font-family: Dancing Script, cursive;
   border-radius: 8px;
-  border: 1px solid #ccc;
   font-size: 1rem;
+  color: black;
+  background-color: transparent;
+}
+
+.entry-page>label {
+  color: black;
+  font: bold 1.2rem system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+}
+
+.entry-page input[type="text"]:focus {
+  outline: none;
+
 }
 
 /* Input de contenido principal */
 .entry-page-content {
+  grid-column: 1 / 3;
+  grid-row: 2 / 4;
   border-radius: 10px;
   border: 1px solid #ccc;
-  font-size: 1rem;
+  font-size: 16px;
+  line-height: 24px;
   height: 95%;
+  width: 100%;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  font-family: 'Dancing Script', cursive;
+  resize: none;
+  overflow-y: auto;
+  color: black;
+  background: repeating-linear-gradient(to bottom,
+      #fff,
+      #fff 23px,
+      #d3d3d3 23px,
+      #d3d3d3 24px);
+
+  /* 👇 Este es el truco para alinear bien */
+  background-attachment: local;
+  background-position-y: 8px;
+  /* igual al padding-top */
 }
+
+
 
 /* Columna derecha: cajas */
 .entry-page-good,
 .entry-page-bad {
-  background-color: #e0f7fa;
+  color: black;
+  font: bold 1.2rem system-ui, Avenir, Helvetica, Arial, sans-serif;
   border-radius: 10px;
   padding: 1rem;
   display: flex;
   flex-direction: column;
 
+  /* Textura visual */
+
+}
+
+.entry-page-return {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  top: 20px;
+  right: 10px;
+  background-color: red;
+}
+
+.entry-page-return:hover {
+  background-color: rgb(255, 100, 100);
+}
+
+.entry-page-good>input[type="text"],
+.entry-page-bad>input[type="text"] {
+  font: 1rem Dancing Script, cursive;
+  color: black;
+  background-color: white;
+  border: none;
+  padding-left: 10px;
+  border-bottom: black 1px solid;
+
+}
+
+.entry-page-good>input[type="text"]:focus,
+.entry-page-bad>input[type="text"]:focus {
+  outline: none;
+
+
+}
+
+.entry-page-good>input[type="text"]:first-of-type,
+.entry-page-bad>input[type="text"]:first-of-type {
+  border-radius: 20px 20px 0 0;
+}
+
+.entry-page-good>:last-child,
+.entry-page-bad>:last-child {
+  border: none;
+  border-radius: 0 0 20px 20px;
 }
 
 .entry-page-good {
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%);
+  background-size: 20px 20px;
+  background-color: #b3b14f;
   grid-column-start: 2;
   grid-row-start: 1;
   height: 100%;
 }
 
 .entry-page-bad {
+  background-image:
+    linear-gradient(-130deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%),
+    linear-gradient(130deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%);
+  background-size: 20px 20px;
+  background-color: #e77e55;
   grid-column-start: 2;
   grid-row-start: 2;
   height: 100%;

@@ -12,7 +12,6 @@ function App() {
         return entry.id === id ? {
           ...entry, ...updatedData
         } : entry
-
       }
       )
     })

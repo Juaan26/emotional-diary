@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 
 export function EntryPage({ entries, updateEntry }) {
     const params = useParams();
@@ -11,7 +11,7 @@ export function EntryPage({ entries, updateEntry }) {
         goodThings: [],
         badThings: []
     });
-
+    const navigate = useNavigate();
     // Buscamos la entrada cuando entries o el id cambien
     useEffect(() => {
         if (!entries) return;
@@ -68,47 +68,104 @@ export function EntryPage({ entries, updateEntry }) {
     };
 
     if (!entry) return <h2>Entrada no encontrada</h2>;
-
+    const arrow = `<=`
     return (
         <div className="entry-page-container">
+            <button className="entry-page-return" onClick={ () => navigate("/") }>{ arrow }  </button>
             <form className="entry-page">
-                <input
-                    type="text"
-                    name="title"
-                    value={ formData.title }
-                    onChange={ handleChange }
-                />
-                <input
-                    type="text"
-                    name="date"
-                    value={ formData.date }
-                    disabled
-                />
+                <label>
+                    Título:
+                    <input
+                        type="text"
+                        name="title"
+                        value={ formData.title }
+                        onChange={ handleChange }
+                    />
+                    <div className="entrypage-underline"></div>
+                </label>
+
+                <label>
+                    Fecha:
+                    <input
+                        type="text"
+                        name="date"
+                        value={ formData.date }
+                        disabled
+                    />
+                    <div className="entrypage-underline2"></div>
+                </label>
+
                 <textarea
                     className="entry-page-content"
                     name="content"
+                    spellCheck="false"
                     value={ formData.content }
                     onChange={ handleChange }
                 />
             </form>
 
+            {/* GOOD THINGS */ }
             <form className="entry-page-good">
-                <input
-                    type="text"
-                    name="goodThings"
-                    value={ formData.goodThings }
-                    onChange={ handleChange }
-                />
+                <label>Cosas buenas:</label>
+                { formData.goodThings.map((item, index) => (
+                    <input
+                        key={ index }
+                        type="text"
+                        value={ item }
+                        onChange={ (e) => {
+                            const newGoodThings = [...formData.goodThings];
+                            newGoodThings[index] = e.target.value;
+                            setFormData(prev => ({
+                                ...prev,
+                                goodThings: newGoodThings
+                            }));
+                        } }
+                    />
+                )) }
+                <button
+                    type="button"
+                    onClick={ () =>
+                        setFormData(prev => ({
+                            ...prev,
+                            goodThings: [...prev.goodThings, ""]
+                        }))
+                    }
+                >
+                    +
+                </button>
             </form>
 
+            {/* BAD THINGS */ }
             <form className="entry-page-bad">
-                <input
-                    type="text"
-                    name="badThings"
-                    value={ formData.badThings }
-                    onChange={ handleChange }
-                />
+                <label>Cosas Malas:</label>
+                { formData.badThings.map((item, index) => (
+                    <input
+                        key={ index }
+                        type="text"
+                        value={ item }
+                        onChange={ (e) => {
+                            const newBadThings = [...formData.badThings];
+                            newBadThings[index] = e.target.value;
+                            setFormData(prev => ({
+                                ...prev,
+                                badThings: newBadThings
+                            }));
+                        } }
+                    />
+                )) }
+                <button
+                    type="button"
+                    onClick={ () =>
+                        setFormData(prev => ({
+                            ...prev,
+                            badThings: [...prev.badThings, ""]
+                        }))
+                    }
+                >
+                    +
+                </button>
             </form>
+
         </div>
     );
 }
